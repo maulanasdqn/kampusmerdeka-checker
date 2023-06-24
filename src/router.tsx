@@ -6,6 +6,6 @@ const { HomePage } = lazily(() => import("@/pages"));
 export const routes = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage/>
+    element: <HomePage />,
   },
 ]);
