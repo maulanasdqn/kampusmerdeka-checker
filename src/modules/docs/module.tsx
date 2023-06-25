@@ -8,6 +8,7 @@ export const DocsModule: FC = (): ReactElement => {
   return (
     <main className="flex items-center justify-center w-full bg-gray-100 h-screen">
       <section className="bg-white p-4 flex items-start justify-start rounded-lg shadow-sm">
+        Test Dokumen
         {data?.data?.map((item, key) => (
           <Fragment key={key}>
             <h1>
