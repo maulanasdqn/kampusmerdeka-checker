@@ -1,18 +1,15 @@
 import { AxiosError } from "axios";
 
 export type TMetaItem = {
-  code: number;
-  status: string;
+  limit: string;
+  offset: string;
+  total: string;
   error: {
     message: string;
   };
 };
 
 export type TMetaResponse<T> = {
-  data: Array<T>;
-} & TMetaItem;
-
-export type TMetaResponseSingle<T> = {
   data: T;
 } & TMetaItem;
 
