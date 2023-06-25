@@ -7,7 +7,7 @@ export const NonAuthenticated: FC<PropsWithChildren> = ({ children }): ReactElem
   const Location = useLocation();
 
   if (isAuthenticated) {
-    return <Navigate to="/me" state={{ from: Location }} replace />;
+    return <Navigate to="/docs" state={{ from: Location }} replace />;
   } else {
     return <>{children}</>;
   }

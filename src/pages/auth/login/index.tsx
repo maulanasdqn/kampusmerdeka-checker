@@ -1,5 +1,13 @@
-import { FC, ReactElement } from "react";
+import { LoginModuleSkeleton } from "@/modules";
+import { FC, ReactElement, Suspense } from "react";
+import { lazily } from "react-lazily";
+
+const { LoginModule } = lazily(() => import("@/modules"));
 
 export const LoginPage: FC = (): ReactElement => {
-  return <h1>Login Page</h1>;
+  return (
+    <Suspense fallback={<LoginModuleSkeleton />}>
+      <LoginModule />
+    </Suspense>
+  );
 };

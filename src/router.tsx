@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { AuthWraper } from "@/layouts";
-import { HomePage, LoginPage } from "@/pages";
+import { DocsPage, LoginPage } from "@/pages";
 
 export const routes = createBrowserRouter([
   {
@@ -14,7 +14,7 @@ export const routes = createBrowserRouter([
     ],
   },
   {
-    path: "/me",
-    element: <HomePage />,
+    path: "/docs",
+    element: <DocsPage />,
   },
 ]);

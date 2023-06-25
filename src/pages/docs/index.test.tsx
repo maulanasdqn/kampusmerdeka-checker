@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { HomePage } from "./";
+import { HomePage } from ".";
 
 describe("Test HomePage", () => {
   it("renders the correct heading text", () => {

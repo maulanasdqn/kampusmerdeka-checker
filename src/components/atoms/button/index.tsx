@@ -4,7 +4,7 @@ import { FC, ReactElement } from "react";
 import { IButtonProps } from "./types";
 import { LoadingSpinner } from "../loading";
 
-export const Button: FC<IButtonProps> = (props): ReactElement => {
+export const Button: FC<IButtonProps> = ({ loading = false, ...props }): ReactElement => {
   const buttonSize = clsx("w-full h-auto hover:opacity-75", {
     "p-2 text-sm": props.size === "sm",
     "p-4 text-md": props.size === "md",
@@ -28,14 +28,14 @@ export const Button: FC<IButtonProps> = (props): ReactElement => {
   props?.href && (
     <Link to={props.href}>
       <button {...props} className={className}>
-        {props?.loading ? <LoadingSpinner /> : props.children}
+        {loading ? <LoadingSpinner /> : props.children}
       </button>
     </Link>
   );
 
   return (
     <button {...props} className={className}>
-      {props?.loading ? <LoadingSpinner /> : props.children}
+      {loading ? <LoadingSpinner /> : props.children}
     </button>
   );
 };

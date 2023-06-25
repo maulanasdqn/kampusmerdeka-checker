@@ -50,7 +50,7 @@ export const LoginModule: FC = (): ReactElement => {
         navigate("/me", { replace: true });
       },
       onError: (error) => {
-        setErrorMessage(error?.response?.data?.message);
+        setErrorMessage(error?.response?.data?.error?.message);
       },
     });
   });
