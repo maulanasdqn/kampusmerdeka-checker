@@ -10,7 +10,7 @@ import { FC, ReactElement, useState } from "react";
 export const LoginModule: FC = (): ReactElement => {
   const navigate = useNavigate();
 
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState<string | undefined>("");
 
   const validationSchema = z.object({
     email: z
@@ -50,7 +50,7 @@ export const LoginModule: FC = (): ReactElement => {
         navigate("/me", { replace: true });
       },
       onError: (error) => {
-        setErrorMessage(error.response?.data?.message);
+        setErrorMessage(error?.response?.data?.message);
       },
     });
   });
@@ -59,7 +59,7 @@ export const LoginModule: FC = (): ReactElement => {
     <AuthLayout
       onSubmit={onSubmit}
       title="Selamat datang kembali"
-      subtitle="Silahkan masuk dengan akun yang sudah terdafatar"
+      subTitle="Silahkan masuk dengan akun yang sudah terdafatar"
       errorMessage={errorMessage}
     >
       <TextField
@@ -68,7 +68,7 @@ export const LoginModule: FC = (): ReactElement => {
         name="email"
         type="email"
         placeholder="test@corp.com"
-        size="md"
+        variant="md"
         status={
           watch("email") === "" && !errors.email ? "none" : errors.email ? "error" : "success"
         }
@@ -87,7 +87,7 @@ export const LoginModule: FC = (): ReactElement => {
         name="password"
         type="password"
         placeholder="********"
-        size="md"
+        variant="md"
         status={
           watch("password") === "" && !errors.password
             ? "none"
