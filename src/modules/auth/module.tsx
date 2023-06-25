@@ -47,7 +47,7 @@ export const LoginModule: FC = (): ReactElement => {
   const onSubmit = handleSubmit((data) => {
     mutate(data, {
       onSuccess: () => {
-        navigate("/me", { replace: true });
+        navigate("/docs", { replace: true });
       },
       onError: (error) => {
         setErrorMessage(error?.response?.data?.error?.message);

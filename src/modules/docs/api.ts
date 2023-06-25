@@ -3,10 +3,7 @@ import { TDocsParams, TDocsResponse } from "./types";
 
 export const docsRequest = async (params: TDocsParams): Promise<TDocsResponse> => {
   const { data } = await api<TDocsResponse>({
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    method: "get",
     params,
     url: "/v1alpha1/documents",
   });
@@ -15,10 +12,7 @@ export const docsRequest = async (params: TDocsParams): Promise<TDocsResponse> =
 
 export const docsStatusRequest = async (params: string): Promise<unknown> => {
   const { data } = await api({
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    method: "get",
     url: `/v1alpha1/documents/${params}/users`,
   });
   return data;

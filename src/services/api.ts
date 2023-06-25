@@ -7,7 +7,6 @@ const abortController = new AbortController();
 const config: AxiosRequestConfig = {
   signal: abortController.signal,
   baseURL: import.meta.env.VITE_API_URL,
-  withCredentials: true,
 };
 
 export const api = axios.create(config);
